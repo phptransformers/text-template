@@ -1,0 +1,43 @@
+{
+    "name": "phptransformers/text-template",
+    "description": "PHPUnit's Text_Template implementation of PhpTransformer.",
+    "keywords": [
+        "PhpTransformers", "PhpTransformer", "Text_Template", "PHPUnit", "Template Engine", "Templates"
+    ],
+    "homepage": "https://github.com/phptransformers/text-template",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MacFJA",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "phptransformers/phptransformer": "~1.0.0",
+        "phpunit/php-text-template": "^1.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~4.6",
+        "squizlabs/php_codesniffer": "~2.3",
+        "phpmd/phpmd": "^2.3",
+        "sebastian/phpcpd": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpTransformers\\TextTemplate\\": "lib"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhpTransformers\\TextTemplate\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": [
+            "phpcs",
+            "phpmd lib/ text cleancode,codesize,controversial,design,naming,unusedcode",
+            "phpcpd lib/",
+            "phpunit --colors=always --coverage-text --coverage-clover=coverage.clover"
+        ]
+    }
+}
